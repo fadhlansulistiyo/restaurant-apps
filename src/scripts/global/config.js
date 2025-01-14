@@ -4,6 +4,7 @@ const CONFIG = {
   DATABASE_NAME: "yumyum-apps-database",
   DATABASE_VERSION: 1,
   OBJECT_STORE_NAME: "yumyum",
+  CACHE_NAME: new Date().toISOString(),
 };
 
 export default CONFIG;

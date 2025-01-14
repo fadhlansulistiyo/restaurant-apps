@@ -7,6 +7,9 @@ import "./components/RestaurantItem";
 // Import App
 import App from "./views/app";
 
+// sw register
+import swRegister from "./utils/sw-register";
+
 const app = new App({
   button: document.querySelector(".menu-toggle"),
   drawer: document.querySelector(".app-bar__nav"),
@@ -19,4 +22,5 @@ window.addEventListener("hashchange", () => {
 
 window.addEventListener("load", () => {
   app.renderPage();
+  swRegister();
 });
