@@ -1,5 +1,5 @@
-import axios from "axios";
-import ApiEndpoint from "../global/api-endpoint";
+import axios from 'axios';
+import ApiEndpoint from '../global/api-endpoint';
 
 const RestaurantSource = {
   async getRestaurantList() {
@@ -20,10 +20,10 @@ const RestaurantSource = {
   },
 
   handleError(error) {
-    console.error("API Error:", error);
+    console.error('API Error:', error);
     return {
       success: false,
-      message: error.response?.data?.message || "Something went wrong",
+      message: error.response?.data?.message || 'Something went wrong',
     };
   },
 };

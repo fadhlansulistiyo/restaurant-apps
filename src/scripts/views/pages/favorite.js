@@ -1,4 +1,4 @@
-import FavoriteRestaurantIdb from "../../data/favorite-restaurant-idb";
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 
 const Favorite = {
   async render() {
@@ -15,7 +15,7 @@ const Favorite = {
   async afterRender() {
     try {
       const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
-      const restaurantListContainer = document.querySelector("#restaurantList");
+      const restaurantListContainer = document.querySelector('#restaurantList');
 
       if (restaurants.length === 0) {
         restaurantListContainer.innerHTML = `
@@ -25,7 +25,7 @@ const Favorite = {
       }
 
       restaurants.forEach((restaurant) => {
-        const restaurantItem = document.createElement("restaurant-item");
+        const restaurantItem = document.createElement('restaurant-item');
         restaurantItem.id = restaurant.id;
         restaurantItem.name = restaurant.name;
         restaurantItem.description = restaurant.description;
@@ -35,8 +35,8 @@ const Favorite = {
         restaurantListContainer.appendChild(restaurantItem);
       });
     } catch (error) {
-      console.error("Error loading favorite restaurants:", error);
-      document.querySelector("#restaurantList").innerHTML = `
+      console.error('Error loading favorite restaurants:', error);
+      document.querySelector('#restaurantList').innerHTML = `
         <p class="error-message">Failed to load favorite restaurants. Please try again later.</p>
       `;
     }

@@ -1,6 +1,6 @@
-import { html } from "lit";
-import LitWithoutShadowDom from "./base/LitWithoutShadowDom";
-import CONFIG from "../global/config";
+import { html } from 'lit';
+import LitWithoutShadowDom from './base/LitWithoutShadowDom';
+import CONFIG from '../global/config';
 
 class RestaurantItem extends LitWithoutShadowDom {
   static properties = {
@@ -14,11 +14,11 @@ class RestaurantItem extends LitWithoutShadowDom {
 
   constructor() {
     super();
-    this.id = "";
-    this.name = "";
-    this.description = "";
-    this.pictureId = "";
-    this.city = "";
+    this.id = '';
+    this.name = '';
+    this.description = '';
+    this.pictureId = '';
+    this.city = '';
     this.rating = 0;
   }
 
@@ -43,4 +43,4 @@ class RestaurantItem extends LitWithoutShadowDom {
   }
 }
 
-customElements.define("restaurant-item", RestaurantItem);
+customElements.define('restaurant-item', RestaurantItem);

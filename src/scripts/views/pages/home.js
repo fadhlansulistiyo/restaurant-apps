@@ -1,4 +1,4 @@
-import RestaurantSource from "../../data/restaurant-source";
+import RestaurantSource from '../../data/restaurant-source';
 
 const Home = {
   async render() {
@@ -30,13 +30,13 @@ const Home = {
   },
 
   async afterRender() {
-    const restaurantListContainer = document.getElementById("restaurantList");
+    const restaurantListContainer = document.getElementById('restaurantList');
 
     try {
       const { restaurants } = await RestaurantSource.getRestaurantList();
 
       restaurants.forEach((restaurant) => {
-        const restaurantItem = document.createElement("restaurant-item");
+        const restaurantItem = document.createElement('restaurant-item');
         restaurantItem.id = restaurant.id;
         restaurantItem.name = restaurant.name;
         restaurantItem.description = restaurant.description;

@@ -1,4 +1,4 @@
-import CONFIG from "../../global/config";
+import CONFIG from '../../global/config';
 
 const createRestaurantDetailTemplate = (restaurant) => `
   <h2 class="restaurant-detail__title">${restaurant.name}</h2>
@@ -26,16 +26,16 @@ const createRestaurantDetailTemplate = (restaurant) => `
       <h4>Foods</h4>
       <ul>
         ${restaurant.menus.foods
-          .map((food) => `<li>${food.name}</li>`)
-          .join("")}
+    .map((food) => `<li>${food.name}</li>`)
+    .join('')}
       </ul>
     </div>
     <div class="restaurant-detail__menu-category">
       <h4>Drinks</h4>
       <ul>
         ${restaurant.menus.drinks
-          .map((drink) => `<li>${drink.name}</li>`)
-          .join("")}
+    .map((drink) => `<li>${drink.name}</li>`)
+    .join('')}
       </ul>
     </div>
   </div>
@@ -43,15 +43,15 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <h3>Customer Reviews</h3>
     <ul>
       ${restaurant.customerReviews
-        .map(
-          (review) => `
+    .map(
+      (review) => `
         <li class="restaurant-detail__review-item">
           <p class="review-name"><strong>${review.name}</strong></p>
           <p class="review-date">${review.date}</p>
           <p class="review-text">${review.review}</p>
         </li>`
-        )
-        .join("")}
+    )
+    .join('')}
     </ul>
   </div>
 `;
