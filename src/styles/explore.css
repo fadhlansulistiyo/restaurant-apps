@@ -1,0 +1,52 @@
+.explore-restaurant {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+}
+
+.restaurant-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-item__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+}
+
+.restaurant-item__content {
+  padding: 16px;
+}
+
+.restaurant-item__title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: black;
+  display: inline-block;
+}
+
+.restaurant-item__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.restaurant-item__title a:hover,
+.restaurant-item__title a:focus {
+  text-decoration: underline;
+}
+
+.restaurant-item__city,
+.restaurant-item__rating {
+  font-size: 0.875rem;
+  margin: 8px 0;
+}
+
+.restaurant-item__description {
+  font-size: 0.875rem;
+  color: #666;
+}
