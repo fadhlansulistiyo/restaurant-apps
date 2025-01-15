@@ -33,6 +33,9 @@
 .restaurant-item__title a {
   color: inherit;
   text-decoration: none;
+  display: inline-block;
+  padding: 0.5rem;
+  min-width: 44px;
 }
 
 .restaurant-item__title a:hover,
