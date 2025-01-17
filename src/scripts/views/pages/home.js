@@ -7,9 +7,17 @@ const Home = {
       <!-- Hero Section -->
       <div class="hero">
         <picture>
-          <source srcset="./images/heros/hero-image_1.jpg" />
+          <source srcset="./images/hero-small.jpg" media="(max-width: 768px)" />
+          <source
+            srcset="./images/hero-medium.jpg"
+            media="(min-width: 768px) and (max-width: 1200px)"
+          />
+          <source
+            srcset="./images/hero-large.jpg"
+            media="(min-width: 1200px)"
+          />
           <img
-            src="./images/heros/hero-image_1.jpg"
+            src="./images/hero-large.jpg"
             alt="Delicious food served at YumYum Apps"
             class="hero__image"
           />

@@ -12,7 +12,8 @@
     "lint:fix": "eslint --fix ./src",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "e2e": "codeceptjs run --steps"
+    "e2e": "codeceptjs run --steps",
+    "build-image": "node sharp.js"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
@@ -40,6 +41,7 @@
     "jest": "^29.6.1",
     "jest-environment-jsdom": "^29.6.1",
     "playwright": "^1.49.1",
+    "sharp": "^0.33.5",
     "style-loader": "^3.3.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
