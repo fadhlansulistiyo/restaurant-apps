@@ -1,4 +1,5 @@
-import RestaurantSource from '../../data/restaurant-source';
+import RestaurantSource from "../../data/restaurant-source";
+import { createRestaurantItemTemplate } from "../templates/template-creator";
 
 const Home = {
   async render() {
@@ -30,21 +31,15 @@ const Home = {
   },
 
   async afterRender() {
-    const restaurantListContainer = document.getElementById('restaurantList');
+    const restaurantListContainer = document.getElementById("restaurantList");
 
     try {
       const { restaurants } = await RestaurantSource.getRestaurantList();
+      console.log(restaurants);
 
       restaurants.forEach((restaurant) => {
-        const restaurantItem = document.createElement('restaurant-item');
-        restaurantItem.id = restaurant.id;
-        restaurantItem.name = restaurant.name;
-        restaurantItem.description = restaurant.description;
-        restaurantItem.pictureId = restaurant.pictureId;
-        restaurantItem.city = restaurant.city;
-        restaurantItem.rating = restaurant.rating;
-
-        restaurantListContainer.appendChild(restaurantItem);
+        restaurantListContainer.innerHTML +=
+          createRestaurantItemTemplate(restaurant);
       });
     } catch (error) {
       restaurantListContainer.innerHTML = `
