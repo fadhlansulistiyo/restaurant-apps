@@ -1,7 +1,7 @@
-import UrlParser from "../../routes/url-parser";
-import RestaurantSource from "../../data/restaurant-source";
-import { createRestaurantDetailTemplate } from "../templates/template-creator";
-import FavoriteButtonPresenter from "../../utils/favorite-button-presenter";
+import UrlParser from '../../routes/url-parser';
+import RestaurantSource from '../../data/restaurant-source';
+import { createRestaurantDetailTemplate } from '../templates/template-creator';
+import FavoriteButtonPresenter from '../../utils/favorite-button-presenter';
 
 const Detail = {
   async render() {
@@ -19,11 +19,11 @@ const Detail = {
           'link[href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"]'
         )
       ) {
-        const linkElement = document.createElement("link");
-        linkElement.rel = "stylesheet";
+        const linkElement = document.createElement('link');
+        linkElement.rel = 'stylesheet';
         linkElement.href =
-          "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
-        linkElement.crossOrigin = "anonymous";
+          'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+        linkElement.crossOrigin = 'anonymous';
         document.head.appendChild(linkElement);
       }
 
@@ -32,18 +32,18 @@ const Detail = {
       const { restaurant } = await RestaurantSource.getRestaurantDetail(url.id);
 
       if (!restaurant) {
-        throw new Error("Restaurant data not found!");
+        throw new Error('Restaurant data not found!');
       }
 
       // Populate restaurant detail content
-      const restaurantContainer = document.querySelector("#restaurant-detail");
+      const restaurantContainer = document.querySelector('#restaurant-detail');
       restaurantContainer.innerHTML =
         createRestaurantDetailTemplate(restaurant);
 
       // Initialize favorite button
       FavoriteButtonPresenter.init({
         favoriteButtonContainer: document.querySelector(
-          "#favoriteButtonContainer"
+          '#favoriteButtonContainer'
         ),
         restaurant: {
           id: restaurant.id,
@@ -58,8 +58,8 @@ const Detail = {
         },
       });
     } catch (error) {
-      console.error("Error loading restaurant detail:", error);
-      const restaurantContainer = document.querySelector("#restaurant-detail");
+      console.error('Error loading restaurant detail:', error);
+      const restaurantContainer = document.querySelector('#restaurant-detail');
       restaurantContainer.innerHTML = `
         <p class="error-message">Failed to load restaurant details. Please try again later.</p>
       `;

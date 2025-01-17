@@ -1,6 +1,6 @@
-import FavoriteRestaurantIdb from "../../data/favorite-restaurant-idb";
-import FavoriteRestaurantView from "./favorite-restaurant/favorite-restaurant-view";
-import FavoriteRestaurantShowPresenter from "./favorite-restaurant/favorite-restaurant-show-presenter";
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
+import FavoriteRestaurantView from './favorite-restaurant/favorite-restaurant-view';
+import FavoriteRestaurantShowPresenter from './favorite-restaurant/favorite-restaurant-show-presenter';
 
 const view = new FavoriteRestaurantView();
 

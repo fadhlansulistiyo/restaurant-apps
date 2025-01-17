@@ -1,4 +1,4 @@
-import { createRestaurantItemTemplate } from "../../templates/template-creator";
+import { createRestaurantItemTemplate } from '../../templates/template-creator';
 
 class FavoriteRestaurantView {
   getTemplate() {
@@ -25,15 +25,15 @@ class FavoriteRestaurantView {
       html = restaurants.reduce(
         (carry, restaurant) =>
           carry.concat(createRestaurantItemTemplate(restaurant)),
-        ""
+        ''
       );
     } else {
       html = this._getEmptyRestaurantTemplate();
     }
-    const restaurantListContainer = document.getElementById("restaurantList");
+    const restaurantListContainer = document.getElementById('restaurantList');
 
     restaurantListContainer.innerHTML = html;
-    restaurantListContainer.dispatchEvent(new Event("restaurants:updated"));
+    restaurantListContainer.dispatchEvent(new Event('restaurants:updated'));
   }
 }
 

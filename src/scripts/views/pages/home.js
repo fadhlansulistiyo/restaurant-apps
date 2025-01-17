@@ -1,5 +1,5 @@
-import RestaurantSource from "../../data/restaurant-source";
-import { createRestaurantItemTemplate } from "../templates/template-creator";
+import RestaurantSource from '../../data/restaurant-source';
+import { createRestaurantItemTemplate } from '../templates/template-creator';
 
 const Home = {
   async render() {
@@ -39,7 +39,7 @@ const Home = {
   },
 
   async afterRender() {
-    const restaurantListContainer = document.getElementById("restaurantList");
+    const restaurantListContainer = document.getElementById('restaurantList');
 
     try {
       const { restaurants } = await RestaurantSource.getRestaurantList();
