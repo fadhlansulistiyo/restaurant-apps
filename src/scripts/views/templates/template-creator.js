@@ -62,9 +62,10 @@ const createRestaurantItemTemplate = (restaurant) => `
     aria-labelledby="restaurant-${restaurant.id}"
   >
     <img
-      src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"
+      class="restaurant-item__image lazyload"
+      data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"
+      src="placeholder.png"
       alt="Picture of ${restaurant.name}"
-      class="restaurant-item__image"
     />
     <div class="restaurant-item__content">
       <h2 id="restaurant-${restaurant.id}" class="restaurant-item__title">
