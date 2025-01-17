@@ -19,7 +19,6 @@ class FavoriteRestaurantView {
   }
 
   showFavoriteRestaurants(restaurants) {
-    const restaurantListContainer = document.getElementById("restaurantList");
     let html;
 
     if (restaurants.length) {
@@ -31,12 +30,10 @@ class FavoriteRestaurantView {
     } else {
       html = this._getEmptyRestaurantTemplate();
     }
+    const restaurantListContainer = document.getElementById("restaurantList");
 
     restaurantListContainer.innerHTML = html;
-
-    document
-      .getElementById("restaurantList")
-      .dispatchEvent(new Event("restaurants:updated"));
+    restaurantListContainer.dispatchEvent(new Event("restaurants:updated"));
   }
 }
 
